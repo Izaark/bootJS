@@ -45,6 +45,60 @@ app.post('/webhook',function(req,res){
 function reciveMessage(event){
 var senderID = event.sender.id;
 var messageText = event.message.text;
+
 console.log(senderID);
 console.log(messageText);
+
+evaluateMessage(senderID,messageText);
+
 }
+
+function evaluateMessage(recipientId, message){
+	var finalMessage;
+
+	if (isContain(message,'ayuda')){
+		finalMessage = 'en que quieres ayuda man';
+		console.log('quieres ayuda ?');
+	}else{
+		finalMessage = 'solo doy eco :' + message;
+		console.log('solo tengo el eco: ' + message);
+	}
+
+	sendMessageText(recipientId, finalMessage);
+}
+
+function sendMessageText(recipientId, message){
+	var messageData = {
+		recipient : {
+			id: recipientId
+		},
+		message:{
+			text:message
+		}
+	};
+	callSendAPI(messageData);
+}
+function callSendAPI(messageData){
+request({
+	uri: 'https://graph.facebook.com/v2.6/me/messages',
+	qs : { access_token: APP_TOKEN },
+	method: 'POST',
+	json: messageData
+}, function(error, response, data){
+if (error) {
+	console.log('error chulo');
+}else{
+	console.log('bien chavo !!!');
+}
+});
+}
+
+function isContain(sentence, word){
+	return sentence.indexOf(word) > -1;
+}
+
+
+
+
+
+
