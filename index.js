@@ -2,7 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var request = require('request');
 
-var APP_TOKEN = 'EAADallZAptoYBAJ52MMzmcs1eZBGwY15ZB8qzWeA9y3RjZA40Qvd46jnlyZAIpzgaw0fJ24p9YWcDJWtXafFMG8h9t80InxZCe3p7ZCS52WvnHZBOZBD2Nfy5VRXrhZArvYShfwOmiJUByre0YVYR81JG6GGgVIEAWosXG2Hems6vxAQZDZD';
+var APP_TOKEN = 'EAADallZAptoYBAM2gHOOgTqsruw4gRyQd2ZAmFwwmhhW7kmfuO4dZCxqpozBSeMu4SP7cwSI1ViCgkSQuXOmc2SN25lOYwAetyi9aL2ZA8f33bnShBwne5GutQ3bsTieD3h9Rgc4ZBTEZCHwZC5evZAhkZCia0dDDdpExC35INnZAs5gZDZD';
 
 var app = express();
 app.use(bodyParser.json());
@@ -53,19 +53,58 @@ evaluateMessage(senderID,messageText);
 
 }
 
+
+
 function evaluateMessage(recipientId, message){
 	var finalMessage;
 
 	if (isContain(message,'ayuda')){
 		finalMessage = 'en que quieres ayuda man';
 		console.log('quieres ayuda ?');
-	}else{
-		finalMessage = 'solo doy eco :' + message;
+	}else if (isContain(message,'hola')){
+		finalMessage = 'Hola como estas ?';
+	}else if (isContain(message,'bien')){
+		finalMessage = 'Eso me alegra mucho :)';
+	}else if (isContain(message,'unam')){
+		finalMessage = 'Universidad Nacional Autónoma de México';
+	}else if (isContain(message,'mal')){
+		finalMessage = '😱 debes alegrarte, la vida es corta, dsifrutala !';
+	}else if (isContain(message,'cool')){
+		finalMessage = 'esa palabra es para chavos cool';
+	}else if (isContain(message,'enfermo')){
+		finalMessage = 'no !! 🤒 , ve pronto al doctor !';
+	}else if (isContain(message,'hambre')){
+		finalMessage = 'te recomiendo, comer cosasas saludables 🍒';
+	}else if (isContain(message,'haces')){
+		finalMessage = 'Estoy estudiando, este mundo es incrible';
+	}
+	else if (isContain(message,'chiste')){
+		finalMessage = 'Me se este: ¿Que le dice un ordenador grande a un ordenador pequeño? :Tan pequeño y ya computas';
+	}
+	else if (isContain(message,'creador')){
+		finalMessage = 'me creo isaac, pero eso no importa mucho !';
+	}
+	else if (isContain(message,'wars')){
+		finalMessage = 'Que la fuerza te acompañe !';
+	}
+	else if (isContain(message,'naciste')){
+		finalMessage = 'el 12 de noviembre del año en curso, vi la luz de facebook!';
+	}
+	else if (isContain(message,'solo')){
+		finalMessage = 'oye, no estas solo, me tienes a mi !!';
+	}
+	else if (isContain(message,'eres')){
+		finalMessage = 'soy tu amigo, y soy un boot ! 🤖';
+	}
+	else{
+		finalMessage = 'lo siento, no entendi, aun estoy aprendiendo ';
 		console.log('solo tengo el eco: ' + message);
 	}
 
 	sendMessageText(recipientId, finalMessage);
 }
+
+
 
 function sendMessageText(recipientId, message){
 	var messageData = {
