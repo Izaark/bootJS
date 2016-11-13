@@ -2,7 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var request = require('request');
 
-var APP_TOKEN = 'EAADallZAptoYBAM2gHOOgTqsruw4gRyQd2ZAmFwwmhhW7kmfuO4dZCxqpozBSeMu4SP7cwSI1ViCgkSQuXOmc2SN25lOYwAetyi9aL2ZA8f33bnShBwne5GutQ3bsTieD3h9Rgc4ZBTEZCHwZC5evZAhkZCia0dDDdpExC35INnZAs5gZDZD';
+var APP_TOKEN = 'EAADallZAptoYBAHFZB59o1PfChyto5E1KtTwUBoe7yO2QnBA53wywFQW3Anry0cuX71lHPwQJrEwZAWzZAWXuZBBlOiE3rW744WP9wZBop5ug0lmoHTnbcDPld865W1mNw54zYZB7NZCy3j4mRK10X18geG4qM9cUBAEZBwbgRCKvkQZDZD';
 
 var app = express();
 app.use(bodyParser.json());
@@ -99,16 +99,14 @@ function evaluateMessage(recipientId, message){
 		finalMessage = 'hmm.. ve al cine, me estoy actualizando para recomendarte pelis !! :)';
 	}
 	else if (isContain(message,'canta')){
-		finalMessage = 'no te gustaría !!, yo soy mas de escuchar !';
+		finalMessage = 'no te gustaría !!, yo soy mas de escuchar';
 	}
-
 	else if (isContain(message,'eres')){
 		finalMessage = 'soy tu amigo, y soy un boot ! 🤖';
 	}
 	else if (isContain(message,'estas')){
 		finalMessage = 'Me sienyo como pez en el agua !';
 	}
-
 	//templates
 
 	else{
