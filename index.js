@@ -62,9 +62,11 @@ function evaluateMessage(recipientId, message){
 		finalMessage = 'en que quieres ayuda man';
 		console.log('quieres ayuda ?');
 	}else if (isContain(message,'hola')){
-		finalMessage = 'Hola como estas ?';
+		finalMessage = 'Hola, como estas ?';
 	}else if (isContain(message,'bien')){
 		finalMessage = 'Eso me alegra mucho :)';
+	}else if (isContain(message,'triste')){
+		finalMessage = ':/, si estas triste eso me pone triste a mi, vamos alegrate !';
 	}else if (isContain(message,'unam')){
 		finalMessage = 'Universidad Nacional Autónoma de México';
 	}else if (isContain(message,'mal')){
@@ -74,9 +76,9 @@ function evaluateMessage(recipientId, message){
 	}else if (isContain(message,'enfermo')){
 		finalMessage = 'no !! 🤒 , ve pronto al doctor !';
 	}else if (isContain(message,'hambre')){
-		finalMessage = 'te recomiendo, comer cosasas saludables 🍒';
+		finalMessage = 'te recomiendo, comer cosas saludables 🍒';
 	}else if (isContain(message,'haces')){
-		finalMessage = 'Estoy estudiando, este mundo es incrible';
+		finalMessage = 'Estoy estudiando, este mundo es increible';
 	}
 	else if (isContain(message,'chiste')){
 		finalMessage = 'Me se este: ¿Que le dice un ordenador grande a un ordenador pequeño? :Tan pequeño y ya computas';
@@ -96,6 +98,12 @@ function evaluateMessage(recipientId, message){
 	else if (isContain(message,'eres')){
 		finalMessage = 'soy tu amigo, y soy un boot ! 🤖';
 	}
+	else if (isContain(message,'estas')){
+		finalMessage = 'Me sienyo como pez en el agua !';
+	}
+
+	//templates
+
 	else{
 		finalMessage = 'lo siento, no entendi, aun estoy aprendiendo ';
 		console.log('solo tengo el eco: ' + message);
