@@ -95,6 +95,13 @@ function evaluateMessage(recipientId, message){
 	else if (isContain(message,'solo')){
 		finalMessage = 'oye, no estas solo, me tienes a mi !!';
 	}
+	else if (isContain(message,'recomiendas')){
+		finalMessage = 'hmm.. ve al cine, me estoy actualizando para recomendarte pelis !! :)';
+	}
+	else if (isContain(message,'canta')){
+		finalMessage = 'no te gustaría !!, yo soy mas de escuchar !';
+	}
+
 	else if (isContain(message,'eres')){
 		finalMessage = 'soy tu amigo, y soy un boot ! 🤖';
 	}
